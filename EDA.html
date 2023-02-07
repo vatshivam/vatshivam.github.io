@@ -62,7 +62,7 @@
 								<li>No connection</li></p>
 								<p>These valus are present in all the features in uniform amount, without any evident pattern with respect to their occurence
 								in the target variable. Let us visualize the number of unique values in each feature:</p>
-								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/27.embed"></iframe>
+								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/27.embed?showlink=false"></iframe>
 								<br>
 								<p>Segregating the features on the basis of unique values will help in performing fine grain analysis. First Let's jump onto exploration of numerical features.</p>
 
@@ -72,17 +72,17 @@
 									Like rest of the features, numerical features will have the above mentioned 8 string values, and they need to be imputed for building a prediction model.
 									Before performing imputation, let's look at the numerical features with respect to time.:
 								</p>
-								<iframe width="1000" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/29.embed"></iframe>
+								<iframe width="1000" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/29.embed?showlink=false"></iframe>
 								<br>
 								<p>
 									From a naked eye, it is difficult to detect a pattern. Decomposing the time series into, its <a href="https://otexts.com/fpp2/tspatterns.html">trend and seasonality</a> will help us understand more about it.
 									Let's first look at the seasonalities for each feature:
 								</p>
-								<iframe width="1000" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/13.embed"></iframe>
+								<iframe width="1000" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/13.embed?showlink=false"></iframe>
 								<br>
 								<p>Next are the trends:</p>
 
-								<iframe width="1000" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/15.embed"></iframe>
+								<iframe width="1000" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/15.embed?showlink=false"></iframe>
 								<br>
 								<p>
 									All the features display seasonality to some extent. B19, B17, and B15 display similar trend and seasonality.
@@ -90,37 +90,37 @@
 								</p>
 
 								<p>The spread of each feature can be found here:</p>
-								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/17.embed"></iframe>
+								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/17.embed?showlink=false"></iframe>
 								<br>
 								<p>Apart from the B_18, features are not highly skewed, however, they exhibit large variances. Let's explore the relationships features exhibit with each other using correlation values:</p>
-								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/37.embed"></iframe>
+								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/37.embed?showlink=false"></iframe>
 								<br>
 								<p>Visualizing a couple of relationships of features that exhibit a strong correlation</p>
 
-								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/31.embed"></iframe>
+								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/31.embed?showlink=false"></iframe>
 								<br>
 								
-								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/33.embed"></iframe>
+								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/33.embed?showlink=false"></iframe>
 								<br>
 								
 								<h2>Analysis of categorical features</h2>
 								<p>As discussed, the 8 noisy string values are present in each feature, but how many are these?</p>
 
-								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/35.embed"></iframe>
+								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/35.embed?showlink=false"></iframe>
 								<br>
 								<p>Being in such a low percentage, we shall either replace those values, or create a seperate aggregated label.
 									Moving forward, Let us visualize the number of unique values in every categorical feature</p>
 								</p>
-								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/25.embed"></iframe>
+								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/25.embed?showlink=false"></iframe>
 								<br>
 								<p>
 									From the above plot we can see that features B_4, B_5, B_9, B_14, B_20, B_22 and B_23 have only 1 value.
 									Hence we shall drop these features while performing feature selection for our prediction model.
 								</p>
 								<p>Here is the distribution of feature B_3 and B_21 that have more than 3 unique categories:</p>
-								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/42.embed"></iframe>
+								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/42.embed?showlink=false"></iframe>
 								<br>
-								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/44.embed"></iframe>
+								<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/44.embed?showlink=false"></iframe>
 							</p>
 							
 							</div>
