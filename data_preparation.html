@@ -19,19 +19,12 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" />Fradulent Credit Card Transactions</span><span class="title"></span>
-								</a>
-
 							<!-- Nav -->
 								<nav>
 									<ul>
 										<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>
-
 						</div>
 					</header>
 
@@ -52,11 +45,48 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Data Preparation</h1>
+							<h1>Data Collection and Preparation</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<div style="margin:auto"><p>Hello this is EDA</p>
-							<iframe width="800" height="500" frameborder="1" scrolling="no" src="//plotly.com/~shva3756/3.embed"></iframe></div>
+							<div style="margin:auto">
+								<p>The dataset that is to be used for predictions is not available online.
+									It was obtained from an Aluminium company on personal basis. The dataset can be found in the 
+									<a href="https://github.com/vatshivam/vatshivam.github.io/">project repository</a>.
+									Since the first assignment requires the usage of an API to collect the data, I have used the Spotify API as a substitute.
+								</p>
+								<br>
+							<h2>Data Collection using Spotify Web API</h2>
+							<p>Here is the code snippet using which I've used to create an access token, that shall be further used to send a request at an endpoint</p>
+							<img src="images/auth.jpg" alt="" width="800" height="500" style="margin:50px 50px"/>
+							<br>
+							<p>Furhter, here is the code snippet to parse the data from json format to a DataFrame.</p>
+							<img src="images/response.jpg" alt="" width="800" height="500" style="margin:50px 50px"/>
+
+							<h2>Data Cleaning</h2>
+							<p>
+								In this section, data cleaning is performed on the original dataset. Let's start by observing a subset of the data.
+							</p>
+							<img src="images/head.jpg" alt="" width="800" height="500" style="margin:50px 50px"/>
+							<p>
+								From the above image it can be inferred that most of the columns are numerical. Here is the summary of variables:
+							</p>
+							<img src="images/info.jpg" alt="" width="800" height="500" style="margin:50px 50px"/>
+							<p>
+								From the above image it is pretty clear that the features and their datatype has a mismatch, 
+								where numerical columns are present as object data type in pandas, which is a character type.
+								Let's check for null values in the data:
+							</p>
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/19.embed"></iframe>
+							<p>
+								Analyzing the target variable is critical for any prediction problem.
+							</p>
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/21.embed"></iframe>
+							<p>
+								After getting rid of the rows having null values for taget, it is evident that the label "Good/Bad" (target) has some
+								noise in it. After cleaning:
+							</p>
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/23.embed"></iframe>
 							</div>
+						</div>
 						</div>
 					</div>
 
