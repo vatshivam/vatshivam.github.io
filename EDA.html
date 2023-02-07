@@ -1,164 +1,114 @@
 <!DOCTYPE HTML>
 <!--
-	Multiverse by HTML5 UP
+	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>Exploratory Data Analysis</title>
+		<title>Data Preparation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets1/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets1/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html"><strong>Fraudulent Credit Card Transactions</strong></a></h1>
-						<nav>
-							<ul>
-								<li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
-							</ul>
-						</nav>
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" />Fradulent Credit Card Transactions</span><span class="title"></span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
 					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="data_preparation.html">Data Preparation</a></li>
+							<li><a href="EDA.html">EDA</a></li>
+							<li><a href="models.html">ML Models</a></li>
+							<li><a href="conclusion.html">Conclusions</a></li>
+							<li><a href="generic.html">References</a></li>
+						</ul>
+					</nav>
 
 				<!-- Main -->
 					<div id="main">
-						<article class="thumb">
-							<!-- <a href="visualizations/city_fraud.jpg" class="image"><img src="visualizations/city_fraud.jpg" alt="" /></a> -->
-							<iframe width="800" height="500" frameborder="1" scrolling="no" src="//plotly.com/~shva3756/17.embed"></iframe>
-							<h2>Number of frauds by cities</h2>
-							<p>Here we can see from the graph that ONLINE has the more number of frauds and it can be said
-								that most of the frauds happens ONLINE.
-							</p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/fradu_amt.jpg" class="image"><img src="visualizations/fradu_amt.jpg" alt="" /></a>
-							<h2>Amount of Fraud and Non-Fraud Transactions over years</h2>
-							<p>The graphs depics that there has been year-over-year growth in the amount of transactions, but also
-								we see that the fraudulent transactions are not so huge numbers. Which means most of the fraudulent
-								transactions are very low amount.
-							</p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/fraud_hr.jpeg" class="image"><img src="visualizations/fraud_hr.jpeg" alt="" /></a>
-							<h2>Avg. fraudulent transactions amount vs Hour of the time</h2>
-							<p>The graph shows the average fraudulent amounts during the hour from which we can infer that during midnight
-								and afternoon are favorites of fraudulent transactions.
-							</p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/Top_Cities.jpg" class="image"><img src="visualizations/Top_Cities.jpg" alt="" /></a>
-							<h2>Transaction Amounts by Cities</h2>
-							<p>We can see that Houston has the biggest transaction amounts totalled, close to $45k and on second is Miami
-								with almost $31k and on third is Atlanta very close to Miami with $27k.
-							</p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/top_states.jpg" class="image"><img src="visualizations/top_states.jpg" alt="" /></a>
-							<h2>Transaction Amounts by States</h2>
-							<p>We can see that California has the biggest transaction amounts totalled, close to $450k and on second is Texas
-								with almost $300k and on third is New York  with $270k.</p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/user_amt.jpg" class="image"><img src="visualizations/user_amt.jpg" alt="" /></a>
-							<h2></h2>
-							<p></p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/User_chip.jpg" class="image"><img src="visualizations/User_chip.jpg" alt="" /></a>
-							<h2>Modes used while transactions</h2>
-							<p>From the pie chart we can see that over 63% of the people have used Swipe Transaction while paying the amount
-								which tell us that it is the most used mode of transaction for a credit card.
-							</p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/year_amt.jpg" class="image"><img src="visualizations/year_amt.jpg" alt="" /></a>
-							<h2></h2>
-							<p></p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/year_fraud.jpg" class="image"><img src="visualizations/year_fraud.jpg" alt="" /></a>
-							<h2>Number of Frauds v/s Year</h2>
-							<p>The graph depicts that during 2010 there were almost 20 fraudulent transaction reported which is maximum among the rest
-								and 16 during the year 2007. The reported cases has up and down trend.
-							</p>
-						</article>
-						<!-- <article class="thumb">
-							<a href="visualizations/fulls/10.jpg" class="image"><img src="visualizations/thumbs/10.jpg" alt="" /></a>
-							<h2>Mattis ante fermentum</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/fulls/11.jpg" class="image"><img src="visualizations/thumbs/11.jpg" alt="" /></a>
-							<h2>Sed ac elementum arcu</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="visualizations/fulls/12.jpg" class="image"><img src="visualizations/thumbs/12.jpg" alt="" /></a>
-							<h2>Vehicula id nulla dignissim</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article> -->
+						<div class="inner">
+							<h1>Data Preparation</h1>
+							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
+							<div style="margin:auto"><p>Hello this is EDA</p>
+							<iframe width="800" height="500" frameborder="1" scrolling="no" src="//plotly.com/~shva3756/3.embed"></iframe></div>
+							</div>
+						</div>
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer" class="panel">
-						<div class="inner split">
-							<div>
-								<section>
-								</section>
-								<section>
-									<h2>Follow me on ...</h2>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-									</ul>
-								</section>
-								
-							</div>
-							<div>
-								<section>
-									<h2>Get in touch</h2>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<input type="text" name="name" id="name" placeholder="Name" />
-											</div>
-											<div class="field half">
-												<input type="text" name="email" id="email" placeholder="Email" />
-											</div>
-											<div class="field">
-												<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
-											</div>
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
 										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-							</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
 						</div>
 					</footer>
 
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets1/js/jquery.min.js"></script>
-			<script src="assets1/js/jquery.poptrox.min.js"></script>
-			<script src="assets1/js/browser.min.js"></script>
-			<script src="assets1/js/breakpoints.min.js"></script>
-			<script src="assets1/js/util.js"></script>
-			<script src="assets1/js/main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
