@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Clustering</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">CSCI - 5562</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="data_preparation.html">Data Preparation</a></li>
+							<li><a href="EDA.html">EDA</a></li>
+							<li><a href="models.html">ML Models</a></li>
+							<li><a href="conclusion.html">Conclusions</a></li>
+							<li><a href="generic.html">References</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Clustering<br />
+							</header>
+                            <div style="margin:auto">
+                            <h2>Overview</h2>
+                            <p>Clustering is an unsupervised ML technique  for discovering interesting patterns in data, 
+                                such as groups of customers based on their behavior. It helps us to find natural groups 
+                                in the feature space of input data. Majorly there are three kinds of clustering:</p>
+
+                                <li>Partitional</li>
+                                <li>Heirarchical</li>
+                                <li>Density</li>
+
+                            <h3>Paritional Clustering</h3>
+                            <p>Partitional clustering algorithms generate various partitions and then evaluate them by some distance metric.
+                                It is suitable for data are in form of spherical blobs. One of the most commonly used partitional clustering algorithms is the k-means clustering algorithm. User is required to provide the number of clusters (k) before starting and the algorithm first initiates the centers (or centroids) of the k partitions. In a nutshell, k-means clustering algorithm then assigns members based on the current centers and re-estimates centers based on the current members. These two steps are repeated until a certain intra-cluster similarity objective function and inter-cluster dissimilarity objective function are optimized.
+                            </p>
+                            <p>In this project, Kmeans can be constructively used to determine if there are any hidden groups/segments in the sensor data.
+                                This may suggest if a particular group of sensor readings have a high associativty with the occurence/requirement of manitenance cycle of a furnace.
+                            </p>
+
+                            <h3>Heirarchical Clustering</h3>
+                            <p>
+                                Hierarchical clustering algorithms repeat the cycle of either merging smaller clusters in to larger ones or dividing larger clusters to smaller ones. Either way, it produces a hierarchy of clusters called a dendogram. Agglomerative clustering strategy uses the bottom-up approach of merging clusters in to larger ones, while divisive clustering strategy uses the top-down approach of splitting in to smaller ones.
+                            </p>
+                            <p>
+                                Implementing clustering on temporal sensor data is not straighforward, and making it simpler for interpretation
+                                is a challenging task given that the number of rows are more than 20,000. Hence, the project will leverage heirarchical clustering
+                                to calculate similarity between the indivisual sensor time series within the dataset rather than on the a single record/row.  
+                            </p>
+
+                            <h2>Data Preparation</h2>
+                            <p>Algorithms like Kmeans and DBSCAN requires data to be in numerical format. This is because the distance metric used to computer centroids is based upon numerical values. If the data is categorical then the results of clustering would not be accurate. This is becuase the label is a relative measure rather than absolute. For example, if a doctor asks the patient to describe their pain level between 1 to 10, then the measure of 5 can vary from one subject to another.</p>
+                            <p>For clustering, the CSV file named <a href="https://github.com/vatshivam/furnace-maintenance-predictor/blob/main/data/clustering_data.csv">clustering_data</a> will be used.</p>
+                            <img src="images/data_prep.jpg" alt="" width="800" height="500" style="margin:50px 50px"/>
+                            <br>
+                            
+                            <h2>Code</h2>
+                            <p>Here is the code where the following components are implemented:</p>
+                            <li><a href="https://github.com/vatshivam/furnace-maintenance-predictor/blob/main/clustering.ipynb">KMeans</a></li>
+                            <li><a href="https://github.com/vatshivam/furnace-maintenance-predictor/blob/main/heirarchical_clustering.R">Hclust</a></li>
+
+                            <h2>Results</h2>
+							<h3>KMeans</h3>
+							<p>For simplicity, KMeans has been performed on a subset of 2 columns from the clustering dataset. The columns names are B_18 and B_17. Reason of choosing only this pair of column was their scatter plot shape. From rest of the scatter plots, this pair exhibited some irregularity in shape. Apart from this pair, all the columns scatter plots resulted in a single well defined blob</p>
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/47.embed?showlink=false"></iframe>
+							<p>Since this pair of features also doesn't have any discrete clusters, Implementing KMeans will not have meaningful results:</p>
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/50.embed?showlink=false"></iframe>
+							<br>
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/58.embed?showlink=false"></iframe>
+							<br>
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/60.embed?showlink=false"></iframe>
+							<p>Performing Elbow method and Silouhette method</p>
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/52.embed?showlink=false"></iframe>
+							<br>
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/56.embed?showlink=false"></iframe>
+							<br>
+							<p>Although the data doesn't seem to have any clusters, the choice of number of clusters to be 3 is the best. This is because  the change in distortion is not significant once we start increasing the number of clusters.
+								After observing the above silhouette plot it can be inferred that the elbow's plot interpretation matches with this plot. That is, the best Kmeans clustering performance is seen for three clusters.
+							</p>
+							<h3>Hierarchical Clustering</h3>
+							<p>Performing heirarchical clustering with cosine similarity not on each row but on columns rendered a dendogram which classified all the columns into one cluster and a single column in another cluster. Given that the nature of the data is temporal, I used dynamic time warp (dtw) as a measure of similarity for exploration. As expected it returned a better classification:</p>
+							<img src="images/hclust_dtw.jpg" alt="" width="800" height="500" style="margin:50px 50px"/>
+							<p>From the dendogram we can infer that there are three major clusers. It coincides with the result of Kmeans above.</p>
+							<p>As stated above, since the data does not reflects any well defined paritions, using clustering techniques on each row is not benificial. However, similarity between time series columns can be analyzed and the results can be used to perform feature engineering.</p>
+						</div>
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
