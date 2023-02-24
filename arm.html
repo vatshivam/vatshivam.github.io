@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Clustering</title>
+		<title>Association Rule Mining</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -53,19 +53,30 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>Clustering<br />
+								<h1>Association Rule Mining (ARM)<br/>
 							</header>
                             <div style="margin:auto">
                             <h2>Overview</h2>
-                            <p>Clustering is an unsupervised ML technique  for discovering interesting patterns in data, 
-                                such as groups of customers based on their behavior. It helps us to find natural groups 
-                                in the feature space of input data. Majorly there are three kinds of clustering:</p>
+                            <p>ARM is a rule-based machine leaning method for discovering interesting relations between variables in large databases. Following are the building blocks of ARM</p>
 
-                                <li>Partitional</li>
-                                <li>Heirarchical</li>
-                                <li>Density</li>
+                                <li>Support</li>
+                                <li>Lift</li>
+                                <li>Confidence</li>
 							<br>
-                            <h3>Paritional Clustering</h3>
+                            <img src="images/s_c_l.png" alt="" width="500" height="200" style="margin:50px 50px"/>
+
+                            <p>SUPPORT: Within a list of transactions, how many transactions contain item A, so it is just the probability of item A occurring, which we can represent as below. Statistically speaking, it is a frequentist's estimate of the probability.</p>
+                            <p>CONFIDENCE: Out of the transactions that contains item A, how many also contains item B. The bigger the overlap, the greater the confidence we have that people who are buying item A also buys item B</p>
+                            <p>LIFT: The ratio between Confidence of A and Support B. This measure is used to determine if item A and B are independent or not</p>
+
+                            <h3>Apriori</h3>
+                            <p>It is an algorithm used to find frequent patterns. It can be described using a few steps</p>
+                            <li>Compute support for each individual item</li>
+                            <li>Remove sets with support less than a threshold value</li>
+                            <li>The next step is to do the same analysis, but now using pairs of products instead of individual products</li>
+                            <br>
+                            <p>Using the step number 2, we are able to prune the significant number of frequent items that have a support less than a threshold value. This will help us to not calculate into those frequent supersets that will surely have a lower support than the current ones. This fact is true given that the support of sets becomes smaller as we add more items.</p>
+
                             <p>Partitional clustering algorithms generate various partitions and then evaluate them by some distance metric.
                                 It is suitable for data are in form of spherical blobs. One of the most commonly used partitional clustering algorithms is the k-means clustering algorithm. User is required to provide the number of clusters (k) before starting and the algorithm first initiates the centers (or centroids) of the k partitions. In a nutshell, k-means clustering algorithm then assigns members based on the current centers and re-estimates centers based on the current members. These two steps are repeated until a certain intra-cluster similarity objective function and inter-cluster dissimilarity objective function are optimized.
                             </p>
