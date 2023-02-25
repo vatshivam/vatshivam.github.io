@@ -78,7 +78,7 @@
                             <li>The next step is to do the same analysis, but now using pairs of products instead of individual products</li>
                             <br>
                             <p>Using the step number 2, we are able to prune the significant number of frequent items that have a support less than a threshold value. This will help us to not calculate into those frequent supersets that will surely have a lower support than the current ones. This fact is true given that the support of sets becomes smaller as we add more items.</p>
-							<img src="images/apriori.png" alt="" width="500" height="200" style="margin:50px 50px"/>
+							<img src="images/apriori.png" alt="" width="500" height="300" style="margin:50px 50px"/>
 							<br>
 							<h3>How is ARM used in this project?</h3>
 							<p>ARM is implemented on the textual data collected from <a href="https://newsapi.org/">Newsapi.org</a>
@@ -87,7 +87,7 @@
 
 							<h2>Data Preparation</h2>
 							Here is a snippet of transactional data that is used in ARM. Access the data <a href="https://github.com/vatshivam/furnace-maintenance-predictor/blob/main/data/transactions_3.csv">here</a>.
-							<img src="images/arm_data.jpg" alt="" width="500" height="200" style="margin:50px 50px"/>
+							<img src="images/arm_data.jpg" alt="" width="500" height="300" style="margin:50px 50px"/>
 							<br>
 							
 							<h2>Code</h2>
@@ -95,10 +95,10 @@
 
 							<h2>Results</h2>
 							<p>Setting the threshold support to 0.03 and confidence to 0.5 renders 8 association rules. Here is the visualization for the same:</p>
-							<img src="images/arm_plot.png" alt="" width="500" height="200" style="margin:50px 50px"/>
+							<img src="images/arm_plot.png" alt="" width="500" height="300" style="margin:50px 50px"/>
 							<br>
 							<p>Tweaking the support threshold to 0.025 generates 30 association rules that are represented below:</p>
-							<img src="images/arm_plot_2.png" alt="" width="500" height="200" style="margin:50px 50px"/>
+							<img src="images/arm_plot_2.png" alt="" width="700" height="400" style="margin:50px 50px"/>
 							<br>
 							<p>Even though the corpus is collected using the keyword "Aluminium" but ironically, the top 10 rules with highest lift does not contain the word "aluminium". This might reflect the fact that news headlines are succint.</p>
 
