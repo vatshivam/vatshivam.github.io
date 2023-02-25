@@ -64,7 +64,9 @@
                                 <li>Confidence</li>
 							<br>
                             <img src="images/s_c_l.png" alt="" width="500" height="200" style="margin:50px 50px"/>
-
+							<br>
+							<h3>What are rules?</h3>
+							<p>Association rules are "if-then" statements, that help to show the probability of relationships between data items, within large data sets in various types of databases. These rules are built based upon the values of support, confidence and lift:</p>
                             <p>SUPPORT: Within a list of transactions, how many transactions contain item A, so it is just the probability of item A occurring, which we can represent as below. Statistically speaking, it is a frequentist's estimate of the probability.</p>
                             <p>CONFIDENCE: Out of the transactions that contains item A, how many also contains item B. The bigger the overlap, the greater the confidence we have that people who are buying item A also buys item B</p>
                             <p>LIFT: The ratio between Confidence of A and Support B. This measure is used to determine if item A and B are independent or not</p>
@@ -76,65 +78,37 @@
                             <li>The next step is to do the same analysis, but now using pairs of products instead of individual products</li>
                             <br>
                             <p>Using the step number 2, we are able to prune the significant number of frequent items that have a support less than a threshold value. This will help us to not calculate into those frequent supersets that will surely have a lower support than the current ones. This fact is true given that the support of sets becomes smaller as we add more items.</p>
+							<img src="images/apriori.png" alt="" width="500" height="200" style="margin:50px 50px"/>
+							<br>
+							<h3>How is ARM used in this project?</h3>
+							<p>ARM is implemented on the textual data collected from <a href="https://newsapi.org/">Newsapi.org</a>
+							Corpus contains headlines of the news articles related to the keyword "Aluminium". Aim of this implementation
+							is to analyze which keywords are most used with Aluminium industry. This shall open doors for new hypothesises and research regarding demand and recycling.</p>
 
-                            <p>Partitional clustering algorithms generate various partitions and then evaluate them by some distance metric.
-                                It is suitable for data are in form of spherical blobs. One of the most commonly used partitional clustering algorithms is the k-means clustering algorithm. User is required to provide the number of clusters (k) before starting and the algorithm first initiates the centers (or centroids) of the k partitions. In a nutshell, k-means clustering algorithm then assigns members based on the current centers and re-estimates centers based on the current members. These two steps are repeated until a certain intra-cluster similarity objective function and inter-cluster dissimilarity objective function are optimized.
-                            </p>
-                            <p>In this project, Kmeans can be constructively used to determine if there are any hidden groups/segments in the sensor data.
-                                This may suggest if a particular group of sensor readings have a high associativty with the occurence/requirement of manitenance cycle of a furnace.
-                            </p>
-
-                            <h3>Heirarchical Clustering</h3>
-                            <p>
-                                Hierarchical clustering algorithms repeat the cycle of either merging smaller clusters in to larger ones or dividing larger clusters to smaller ones. Either way, it produces a hierarchy of clusters called a dendogram. Agglomerative clustering strategy uses the bottom-up approach of merging clusters in to larger ones, while divisive clustering strategy uses the top-down approach of splitting in to smaller ones.
-                            </p>
-                            <p>
-                                Implementing clustering on temporal sensor data is not straighforward, and making it simpler for interpretation
-                                is a challenging task given that the number of rows are more than 20,000. Hence, the project will leverage heirarchical clustering
-                                to calculate similarity between the indivisual sensor time series within the dataset rather than on the a single record/row.  
-                            </p>
-							<h2>Difference between the two</h2>
-							<p>For Hierarchical clustering, one doesn't need to determine the number of clusters. However, for partitional clustering one should mention the required number of clusters. Hierarchical clustering returns a much more meaningful and subjective division of clusters but partitional clustering results in exactly k clusters.</p>
-
-                            <h2>Data Preparation</h2>
-                            <p>Algorithms like Kmeans and DBSCAN requires data to be in numerical format. This is because the distance metric used to computer centroids is based upon numerical values. If the data is categorical then the results of clustering would not be accurate. This is becuase the label is a relative measure rather than absolute. For example, if a doctor asks the patient to describe their pain level between 1 to 10, then the measure of 5 can vary from one subject to another.</p>
-                            <p>For clustering, the CSV file named <a href="https://github.com/vatshivam/furnace-maintenance-predictor/blob/main/data/clustering_data.csv">clustering_data</a> is used. No extra preprocessing was required to obtain this data, apart from removing the categorical columns.This is the original data:</p>
-                            
-							<img src="images/head.jpg" alt="" width="500" height="200" style="margin:50px 50px"/>
-							<p>This is the transformed data:</p>
-							<img src="images/data_prep.jpg" alt="" width="500" height="200" style="margin:50px 50px"/>
-                            <br>
-                            
-                            <h2>Code</h2>
-                            <p>Here is the code where the following components are implemented:</p>
+							<h2>Data Preparation</h2>
+							Here is a snippet of transactional data that is used in ARM. Access the data <a href="https://github.com/vatshivam/furnace-maintenance-predictor/blob/main/data/transactions_3.csv">here</a>.
+							<img src="images/arm_data.jpg" alt="" width="500" height="200" style="margin:50px 50px"/>
+							<br>
 							
-                            <li><a href="https://github.com/vatshivam/furnace-maintenance-predictor/blob/main/clustering.ipynb">KMeans</a></li>
-                            <li><a href="https://github.com/vatshivam/furnace-maintenance-predictor/blob/main/heirarchical_clustering.R">Hclust</a></li>
+							<h2>Code</h2>
+							<p>Here is the <a href = "https://github.com/vatshivam/furnace-maintenance-predictor/blob/main/arm.R">code</a> for ARM</p>
+
+							<h2>Results</h2>
+							<p>Setting the threshold support to 0.03 and confidence to 0.5 renders 8 association rules. Here is the visualization for the same:</p>
+							<img src="images/arm_plot.png" alt="" width="500" height="200" style="margin:50px 50px"/>
 							<br>
-                            <h2>Results</h2>
-							<h3>KMeans</h3>
-							<p>For simplicity, KMeans has been performed on a subset of 2 columns from the clustering dataset. The columns names are B_18 and B_17. Reason of choosing only this pair of column was their scatter plot shape. From rest of the scatter plots, this pair exhibited some irregularity in shape. Apart from this pair, all the columns scatter plots resulted in a single well defined blob</p>
-							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/47.embed?showlink=false"></iframe>
-							<p>Since this pair of features also doesn't have any discrete clusters, Implementing KMeans will not have meaningful results:</p>
-							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/50.embed?showlink=false"></iframe>
+							<p>Tweaking the support threshold to 0.025 generates 30 association rules that are represented below:</p>
+							<img src="images/arm_plot_2.png" alt="" width="500" height="200" style="margin:50px 50px"/>
 							<br>
-							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/58.embed?showlink=false"></iframe>
-							<br>
-							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/60.embed?showlink=false"></iframe>
-							<p>Performing Elbow method and Silouhette method</p>
-							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/52.embed?showlink=false"></iframe>
-							<br>
-							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shva3756/56.embed?showlink=false"></iframe>
-							<br>
-							<p>Although the data doesn't seem to have any clusters, the choice of number of clusters to be 3 is the best. This is because  the change in distortion is not significant once we start increasing the number of clusters.
-								After observing the above silhouette plot it can be inferred that the elbow's plot interpretation matches with this plot. That is, the best Kmeans clustering performance is seen for three clusters.
+							<p>Even though the corpus is collected using the keyword "Aluminium" but ironically, the top 10 rules with highest lift does not contain the word "aluminium". This might reflect the fact that news headlines are succint.</p>
+
+							<h2>Conclusions</h2>
+							<p>The dataset collected for association rule mining is not tightly coupled with the problem statement. 
+								This technique in the project's context remains limited to exploration.
+								From the top association rules, we cannot deduce any meaningful relatio
+								nships/rules related to Aluminium. Some of the top assocaited words with 
+								Aluminium are: China, Global, Market, Billion, USD, Output.
 							</p>
-							<h3>Hierarchical Clustering</h3>
-							<p>Performing heirarchical clustering with cosine similarity not on each row but on columns rendered a dendogram which classified all the columns into one cluster and a single column in another cluster. Given that the nature of the data is temporal, I used dynamic time warp (dtw) as a measure of similarity for exploration. As expected it returned a better classification:</p>
-							<img src="images/hclust_dtw.png" alt="" width="800" height="500" style="margin:50px 50px"/>
-							<p>From the dendogram we can infer that there are three major clusers. It coincides with the result of Kmeans above.</p>
-							<h2>Conclusion</h2>
-							<p>As stated above, since the data does not reflects any well defined paritions, using clustering techniques on each row is not benificial. However, similarity between time series columns can be analyzed and the results can be used to perform feature engineering.</p>
 						</div>
 						</div>
 					</div>
