@@ -69,6 +69,7 @@
                             <p>Partitional clustering algorithms generate various partitions and then evaluate them by some distance metric.
                                 It is suitable for data are in form of spherical blobs. One of the most commonly used partitional clustering algorithms is the k-means clustering algorithm. User is required to provide the number of clusters (k) before starting and the algorithm first initiates the centers (or centroids) of the k partitions. In a nutshell, k-means clustering algorithm then assigns members based on the current centers and re-estimates centers based on the current members. These two steps are repeated until a certain intra-cluster similarity objective function and inter-cluster dissimilarity objective function are optimized.
                             </p>
+							<br>
                             <p>In this project, Kmeans can be constructively used to determine if there are any hidden groups/segments in the sensor data.
                                 This may suggest if a particular group of sensor readings have a high associativty with the occurence/requirement of manitenance cycle of a furnace.
                             </p>
@@ -77,10 +78,27 @@
                             <p>
                                 Hierarchical clustering algorithms repeat the cycle of either merging smaller clusters in to larger ones or dividing larger clusters to smaller ones. Either way, it produces a hierarchy of clusters called a dendogram. Agglomerative clustering strategy uses the bottom-up approach of merging clusters in to larger ones, while divisive clustering strategy uses the top-down approach of splitting in to smaller ones.
                             </p>
+
+							<h3>Distance Metrics</h3>
+							<b>Euclidean distance</b> is a common distance metric used in k-means clustering to measure the similarity between data points. 
+                                In k-means clustering, the goal is to partition the data into k clusters, where each cluster contains data points that are similar to each other.
+                                For each data point in the dataset, we calculate its distance to each of the k cluster centers using the Euclidean distance formula.
+                               <br> <img src="images/Centroids.png" width="400" height="200" style="margin:30px 10px"></p>  
+                                
+                                <br><br>
+                                <b>Cosine similarity</b>, measures the cosine of the angle between two vectors and is scale-invariant.
+                                To calculate the cosine similarity between a data point and a centroid, we treat each data point and centroid as a vector of features.
+                                The similarity between the two vectors is then calculated as the dot product of the vectors divided by the product of their magnitudes. 
+                                <br><img src="images/cosine_sim.jpeg" width="400" height="200" style="margin:30px 10px"></p>
+                                <br><br>
+                                <b>Manhattan distance</b> is an alternative distance metric that can be used in k-means clustering instead of Euclidean distance.
+                                For each data point in the dataset, we calculate its distance to each of the k cluster centers using the Manhattan distance formula.
+                                Based on the distances, we assign each data point to the nearest cluster center, creating k clusters.
+                                <br><img src="images/manhattan_distance.jpeg" width="400" height="200" style="margin:30px 10px"></p>
                             <p>
-                                Implementing clustering on temporal sensor data is not straighforward, and making it simpler for interpretation
+                                <b>Implementing clustering on temporal sensor data is not straighforward, and making it simpler for interpretation
                                 is a challenging task given that the number of rows are more than 20,000. Hence, the project will leverage heirarchical clustering
-                                to calculate similarity between the indivisual sensor time series within the dataset rather than on the a single record/row.  
+                                to calculate similarity between the indivisual sensor time series within the dataset rather than on the a single record/row.</b>
                             </p>
 							<h2>Difference between the two</h2>
 							<p>For Hierarchical clustering, one doesn't need to determine the number of clusters. However, for partitional clustering one should mention the required number of clusters. Hierarchical clustering returns a much more meaningful and subjective division of clusters but partitional clustering results in exactly k clusters.</p>
